@@ -1,8 +1,4 @@
-from fastapi import FastAPI
+from .setup import create_app
 
 
-app = FastAPI()
-
-@app.get("/")
-def home():
-    return {"message": "Restaurant Ordering System is running!"}
+app = create_app(env_file)
