@@ -1,4 +1,4 @@
-from sqlalchemy import Boolean, Float, Integer, String, null
+from sqlalchemy import Boolean, Float, ForeignKey, Integer, String, null
 from sqlalchemy.orm import Mapped, mapped_column
 from pydantic import BaseModel
 

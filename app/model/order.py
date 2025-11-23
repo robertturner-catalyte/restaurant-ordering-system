@@ -14,6 +14,9 @@ class Order(BaseModel):
     updated_at: Mapped[str] = mapped_column(DateTime(50), nullable=False)
     picked_up_at: Mapped[str] = mapped_column(DateTime(50), nullable=True)
 
+    
+
     def __repr__(self):
         return f"Order(id={self.id}, order_type={self.order_type}, customer_name={self.customer_name}, total_amount={self.total_amount}, status={self.status}, created_at={self.created_at}, updated_at={self.updated_at}, picked_up_at={self.picked_up_at})"
 
+__all__= ["Order"]
