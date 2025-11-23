@@ -9,14 +9,8 @@ class OrderItem(BaseModel):
     __tablename__ = "order_items"
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
-
-    order_id: Mapped[int] = mapped_column(
-        ForeignKey("orders.id"), nullable=False
-    )
-    menu_item_id: Mapped[int] = mapped_column(
-        ForeignKey("menu_items.id"), nullable=False
-    )
-
+    order_id: Mapped[int] = mapped_column(ForeignKey("orders.id"), nullable=False)
+    menu_item_id: Mapped[int] = mapped_column(ForeignKey("menu_items.id"), nullable=False)
     quantity: Mapped[int] = mapped_column(Integer, nullable=False)
     item_price: Mapped[float] = mapped_column(Float, nullable=False)  
     note: Mapped[Optional[str]] = mapped_column(String(300), nullable=True)

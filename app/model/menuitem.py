@@ -15,9 +15,7 @@ class MenuItem(BaseModel):
     active: Mapped[bool] = mapped_column(Boolean, nullable=False, default=True)
 
 
-    order_items: Mapped[list["OrderItem"]] = relationship(
-        back_populates="menu_item", cascade="all, delete-orphan"
-    )
+    order_items: Mapped[list["OrderItem"]] = relationship(back_populates="menu_item", cascade="all, delete-orphan")
 
     def __repr__(self) -> str:
         return (

@@ -21,9 +21,7 @@ class Order(BaseModel):
     updated_at: Mapped[datetime] = mapped_column(DateTime, nullable=False)
     picked_up_at: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
 
-    items: Mapped[list["OrderItem"]] = relationship(
-        back_populates="order", cascade="all, delete-orphan"
-    )
+    items: Mapped[list["OrderItem"]] = relationship(back_populates="order", cascade="all, delete-orphan")
 
     def __repr__(self) -> str:
         return (
